@@ -3,36 +3,30 @@ package rocks.zipcode;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class TestComparable {
     @Test
-    public void testRemov(){
+    public void testCompare(){
         //Given
         String[] arr = {"lol", "haha", "rofl"};
-        PriorityQueue<String> pq = new PriorityQueue<>();
-        Collections.addAll(pq, arr);
-        String expected = "lol";
+        String expected = "haha";
         // When
-        pq.poll();
-        String actual = pq.peek();
+        String comp = arr[2];
 
         // Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(expected.compareTo(comp) <= -1);
     }
     @Test
-    public void testRemove(){
+    public void testCompare1(){
         //Given
-        String[] arr = {"lol", "haha", "rofl"};
-        PriorityQueue<String> pq = new PriorityQueue<>();
-        Collections.addAll(pq, arr);
-        String expected = "lol";
+        Integer x = 24;
+        Integer y = 24;
         // When
-        pq.poll();
-        String actual = pq.peek();
 
         // Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals( x.compareTo(y), 0);
     }
 }
