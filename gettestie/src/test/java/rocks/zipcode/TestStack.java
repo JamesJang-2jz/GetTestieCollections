@@ -4,7 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
+import java.util.Map;
 import java.util.Stack;
+import java.util.TreeMap;
 
 public class TestStack {
 
@@ -34,5 +37,20 @@ public class TestStack {
         Assert.assertEquals(expected, actual);
     }
 
-    // Make a bigger test exercising more Stack methods.....
+    @Test
+    public void testSearch() {
+        String input = "toyota";
+        String input2 = "nissan";
+        String input3 = "mazda";
+        Integer expected = 3;
+        Stack<String> tm = new Stack<>();
+        // When
+        tm.push(input);
+        tm.push(input2);
+        tm.push(input3);
+        Integer actual = tm.search(input);
+        // Then
+        Assert.assertEquals(expected, actual);
+        // Make a bigger test exercising more Stack methods.....
+    }
 }
